@@ -26,13 +26,13 @@ body{
 
 h1{
     text-align: center;
-    color: aqua;
+    color: black;
 }
 
 .music-name, .artist-name{
     text-align: center;
     text-transform: capitalize;
-    color: aliceblue;
+    color: white;
 }
 
 .music-name{
@@ -119,7 +119,7 @@ h1{
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: aquamarine;
+    background-color: green;
     cursor: pointer;
     border: none;
 }
@@ -132,7 +132,64 @@ h1{
     width: 10px;
     height: 30%;
     border-radius: 2px;
-    background-color: blueviolet;
+    background-color: white;
     transition: 0.5s;
     clip-path: polygon(0 0, 100% 0, 100% 100% 0 100%);
+}
+
+.play-btn span:nth-child(2){
+    left: 55%;
+    transform-origin: center;
+
+
+}
+
+.play-btn.pause span:nth-child(2){
+    transform: translateY(-50%) scaleY(0);
+
+}
+
+.play-btn.pause span:nth-child(1){
+    width: 35%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    border-radius: 0 ;
+    clip-path: polygon(0 0, 100% 50%, 100% 50%, 0 100%);
+}
+
+.play-btn.pause {
+    animation: pulse 2s linear infinite;
+}
+
+@keyframes pulse{
+    0%{
+        box-shadow: 0;
+    }
+    50%{
+        box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.1);
+    }
+    100% {
+        box-shadow: 0 0 05px rgba(255, 255, 255, 0.4);
+    }
+}
+
+.btn {
+    width: 40px;
+    height: 40px;
+    background-color: green;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }
