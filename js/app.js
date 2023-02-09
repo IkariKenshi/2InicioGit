@@ -75,3 +75,22 @@ forwardBtn.addEventListener('click', () =>{
     setMusic(currentMusic)
     playMusic()
 })
+
+
+backwarddBtn.addEventListener('click', () =>{
+    if(currentMusic <= 0) {
+        currentMusic = songs.length -1
+    }
+    else{
+        currentMusic--
+    }
+    setMusic(currentMusic)
+    playMusic()
+})
+
+
+const playMusic = () => {
+    music.play()
+    playBtn.classList.remove('pause')
+    disk.classList.add('play')
+}
